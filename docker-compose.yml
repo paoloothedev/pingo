@@ -1,0 +1,18 @@
+services:
+  leaddesk:
+    image: ghcr.io/paoloothedev/leaddesk:latest
+    build: .
+    init: true
+    restart: unless-stopped
+    ports:
+      - "${LEADDESK_PORT:-3001}:3001"
+    environment:
+      - TZ=${TZ:-UTC}
+      - CORS_ORIGINS=${CORS_ORIGINS:-}
+    # The scraper's browser needs some shared memory
+    shm_size: 512m
+    volumes:
+      - leaddesk-data:/data
+
+volumes:
+  leaddesk-data:

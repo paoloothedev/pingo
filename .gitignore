@@ -1,0 +1,22 @@
+node_modules/
+server/leaddesk.db*
+server/public/
+client/dist/
+server/baileys_auth/
+server/wa_media/
+server/.wwebjs_auth/
+.wwebjs_cache/
+.mimocode/
+server/accounts.json
+server/gmaps/jobs_data.json
+.env
+*.log
+node_modules/
+dist/
+
+# Local data — never commit (live leads + WhatsApp sessions)
+server/*.db
+server/*.db-*
+server/*.db.*
+server/.wwebjs_cache/
+test.csv
